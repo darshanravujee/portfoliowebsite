@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darshan Ravujee - Home</title>
+    <link rel="stylesheet" href="main.css">
+
+    </head>
+    <body>
+
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="container">
+            <section id="education" class="section">
+                <h2>Skills</h2>
+                <p class="description">
+                    Explore the diverse range of skills I've developed through my education, work experience, and personal
+                    projects. From legal expertise to programming prowess, I'm equipped to tackle a wide variety of challenges.
+                </p>
+            </header>
+            <section class="skills-grid">
+                <div class="skill-category">
+                    <h1>Legal</h1>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Contract Drafting">Contract Drafting</li>
+                        <li class="skill-item" data-skill="Legal Research">Legal Research</li>
+                        <li class="skill-item" data-skill="Litigation Support">Litigation Support</li>
+                        <li class="skill-item" data-skill="Intellectual Property">Intellectual Property</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h1>Programming</h1>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="JavaScript">JavaScript</li>
+                        <li class="skill-item" data-skill="React">React</li>
+                        <li class="skill-item" data-skill="Node.js">Node.js</li>
+                        <li class="skill-item" data-skill="SQL">SQL</li>
+                        <li class="skill-item" data-skill="Python">Python</li>
+                        <li class="skill-item" data-skill="Git">Git</li>
+                        <li class="skill-item" data-skill="TypeScript">TypeScript</li>
+                        <li class="skill-item" data-skill="Docker">Docker</li>
+                        <li class="skill-item" data-skill="AWS">AWS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h1>Business</h1>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Strategic Planning">Strategic Planning</li>
+                        <li class="skill-item" data-skill="Financial Analysis">Financial Analysis</li>
+                        <li class="skill-item" data-skill="Project Management">Project Management</li>
+                        <li class="skill-item" data-skill="Marketing">Marketing</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h1>Soft Skills</h1>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Communication">Communication</li>
+                        <li class="skill-item" data-skill="Problem-Solving">Problem-Solving</li>
+                        <li class="skill-item" data-skill="Teamwork">Teamwork</li>
+                        <li class="skill-item" data-skill="Adaptability">Adaptability</li>
+                        <li class="skill-item" data-skill="Leadership">Leadership</li>
+                        <li class="skill-item" data-skill="Time Management">Time Management</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h1>Design</h1>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="Figma">Figma</li>
+                        <li class="skill-item" data-skill="Adobe Creative Suite">Adobe Creative Suite</li>
+                        <li class="skill-item" data-skill="User Experience">User Experience</li>
+                        <li class="skill-item" data-skill="Visual Design">Visual Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h1>Languages</h1>
+                    <ul class="skill-list">
+                        <li class="skill-item" data-skill="English">English</li>
+                        <li class="skill-item" data-skill="Spanish">Spanish</li>
+                        <li class="skill-item" data-skill="French">French</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    
+        <div id="skillModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="skillTitle"></h2>
+                <p id="skillDescription"></p>
+            </div>
+        </div>
+    
+        <script>
+            const modal = document.getElementById("skillModal");
+            const skillTitle = document.getElementById("skillTitle");
+            const skillDescription = document.getElementById("skillDescription");
+            const closeBtn = document.getElementsByClassName("close")[0];
+    
+            const skillDescriptions = {
+                "Contract Drafting": "Expertise in creating, reviewing, and negotiating various legal contracts and agreements.",
+                "Legal Research": "Proficient in conducting thorough legal research using various databases and resources.",
+                "Litigation Support": "Experience in assisting with case preparation, document review, and courtroom proceedings.",
+                "Intellectual Property": "Knowledge of patents, trademarks, copyrights, and trade secrets protection.",
+                "JavaScript": "Proficient in modern JavaScript, including ES6+ features and asynchronous programming.",
+                "React": "Experienced in building complex user interfaces and single-page applications using React.",
+                "Node.js": "Skilled in server-side JavaScript programming and building RESTful APIs.",
+                "SQL": "Proficient in writing complex queries and managing relational databases.",
+                "Python": "Experienced in Python programming for data analysis, web development, and automation.",
+                "Git": "Proficient in version control and collaborative development using Git.",
+                "TypeScript": "Skilled in using TypeScript for large-scale JavaScript applications.",
+                "Docker": "Experienced in containerizing applications and managing Docker environments.",
+                "AWS": "Knowledgeable in various Amazon Web Services for cloud computing and deployment.",
+                "Strategic Planning": "Skilled in developing and implementing long-term business strategies.",
+                "Financial Analysis": "Experienced in interpreting financial data and making data-driven business decisions.",
+                "Project Management": "Proficient in managing complex projects from inception to completion.",
+                "Marketing": "Knowledgeable in digital marketing strategies and brand development.",
+                "Communication": "Excellent verbal and written communication skills, with the ability to convey complex ideas clearly.",
+                "Problem-Solving": "Strong analytical and critical thinking skills for effective problem resolution.",
+                "Teamwork": "Experienced in collaborating with diverse teams and fostering a positive work environment.",
+                "Adaptability": "Quick learner with the ability to adapt to new technologies and changing work environments.",
+                "Leadership": "Skilled in guiding and motivating teams to achieve common goals.",
+                "Time Management": "Proficient in prioritizing tasks and managing time effectively to meet deadlines.",
+                "Figma": "Proficient in creating user interface designs and prototypes using Figma.",
+                "Adobe Creative Suite": "Experienced in using various Adobe applications for graphic design and photo editing.",
+                "User Experience": "Skilled in creating user-centered designs and conducting usability testing.",
+                "Visual Design": "Proficient in creating visually appealing and effective designs for various media.",
+                "English": "Native proficiency in speaking, reading, and writing English.",
+                "Spanish": "Professional working proficiency in Spanish.",
+                "French": "Intermediate proficiency in French."
+            };
+    
+            document.querySelectorAll('.skill-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const skill = this.getAttribute('data-skill');
+                    skillTitle.textContent = skill;
+                    skillDescription.textContent = skillDescriptions[skill] || "Description not available.";
+                    modal.style.display = "block";
+                });
+            });
+    
+            closeBtn.onclick = function() {
+                modal.style.display = "none";
+            }
+    
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+    </html>
