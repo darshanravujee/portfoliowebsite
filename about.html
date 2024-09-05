@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darshan Ravujee - About</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </head>
 <body>
     <nav class="nav">
@@ -35,18 +36,13 @@
     </main>
 
     <div class="stars"></div>
+    <footer>
+        <div class="social-links">
+            <a href="www.linkedin.com/in/darshan-ravujee-6a216722a" aria-label="LinkedIn profile"><i class="fab fa-linkedin"></i></a>
+            <a href="github.com/darshanravujee" aria-label="GitHub profile"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="Twitter profile"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
 
-    <script>
-        // Create stars (same as in index.html)
-        const starsContainer = document.querySelector('.stars');
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = `${Math.random() * 100}%`;
-            star.style.top = `${Math.random() * 100}%`;
-            star.style.animationDelay = `${Math.random() * 5}s`;
-            starsContainer.appendChild(star);
-        }
-    </script>
 </body>
 </html>
