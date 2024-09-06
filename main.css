@@ -119,6 +119,7 @@ body, html {
     padding: 30px;
     margin-bottom: 30px;
     transition: all 0.3s ease;
+    text-align: justify;
 }
 
 .card:hover {
@@ -334,10 +335,17 @@ body, html {
 .certification-item h3 {
     margin-top: 0;
     color: var(--primary-color);
+    text-align: center;
+}
+
+.certification-item h4 {
+    margin-top: 0;
+    text-align: left;
 }
 
 .certification-item p {
     margin: 5px 0;
+    text-align: justify;
 }
 
 /* ... (rest of the CSS remains the same) ... */
@@ -446,3 +454,49 @@ body, html {
     text-decoration: none;
     cursor: pointer;
 }
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.social-links a {
+    color: #ffffff;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #4a90e2; /* Change this to your preferred hover color */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.carousel-inner {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+.carousel-item {
+    flex: 0 0 100%;
+}
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+.carousel-control.prev { left: 10px; }
+.carousel-control.next { right: 10px; }
