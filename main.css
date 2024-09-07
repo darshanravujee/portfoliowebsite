@@ -1,3 +1,4 @@
+/* Base styles (mobile-first) */
 :root {
     --primary-color: #4d61fe;
     --secondary-color: #4CAF50;
@@ -13,14 +14,18 @@ body, html {
     background-color: var(--background-color);
     color: var(--text-color);
     overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 .container {
+    width: 95%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 1rem;
 }
 
+/* Navigation styles */
 /* Navigation styles */
 .nav {
     background-color: rgba(0, 0, 0, 0.8);
@@ -31,23 +36,38 @@ body, html {
     z-index: 1000;
 }
 
+.menu-toggle {
+    display: block;
+    padding: 1rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    text-align: right;
+    cursor: pointer;
+}
+
+.nav-items {
+    display: none;
+}
+
+.nav-items.active {
+    display: block;
+}
+
 .nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
 .nav li {
-    margin: 0 15px;
+    padding: 0.5rem 1rem;
 }
 
 .nav a {
     color: var(--text-color);
     text-decoration: none;
-    padding: 15px 10px;
-    display: inline-block;
+    display: block;
+    padding: 0.5rem 0;
     transition: color 0.3s ease;
 }
 
@@ -55,14 +75,41 @@ body, html {
     color: var(--accent-color);
 }
 
+/* Adjust main content to account for fixed nav */
+main {
+    padding-top: 60px; /* Adjust this value based on your nav height */
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-items {
+        display: block;
+    }
+
+    .nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav li {
+        padding: 0;
+        margin: 0 1rem;
+    }
+}
+
 /* Header styles */
 .header {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    padding: 1rem;
 }
 
 .header-content {
@@ -71,21 +118,21 @@ body, html {
 }
 
 .header h1 {
-    font-size: 4em;
-    margin-bottom: 20px;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     animation: fadeInUp 1s ease-out;
 }
 
 .header p {
-    font-size: 1.5em;
-    margin-bottom: 30px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease-out 0.5s both;
 }
 
 /* Button styles */
 .btn {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 0.75rem 1.5rem;
     background-color: var(--primary-color);
     color: white;
     text-decoration: none;
@@ -102,13 +149,13 @@ body, html {
 
 /* Section styles */
 .section {
-    padding: 80px 0;
+    padding: 3rem 0;
     position: relative;
 }
 
 .section h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
     text-align: center;
 }
 
@@ -116,29 +163,28 @@ body, html {
 .card {
     background-color: rgba(192, 224, 255, 0.05);
     border-radius: 15px;
-    padding: 30px;
-    margin-bottom: 30px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
     text-align: justify;
 }
 
 .card:hover {
     background-color: var(--accent-color);
-    transform: scale(1.05);
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
 
 /* Skills grid styles */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 .skill-item {
     text-align: center;
-    padding: 20px;
+    padding: 1rem;
     background-color: rgba(255,255,255,0.05);
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -151,20 +197,20 @@ body, html {
 
 .skill-item i {
     font-size: 2em;
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 /* Contact form styles */
 .contact-form {
-    max-width: 600px;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
     border: none;
     background-color: rgba(255,255,255,0.05);
     color: var(--text-color);
@@ -175,7 +221,7 @@ body, html {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 15px 30px;
+    padding: 0.75rem 1.5rem;
     border-radius: 30px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -185,9 +231,7 @@ body, html {
     background-color: var(--accent-color);
 }
 
-/* ... (previous CSS remains the same) ... */
-
-/* Updated Timeline styles */
+/* Timeline styles */
 .timeline {
     position: relative;
     padding: 20px 0;
@@ -198,7 +242,7 @@ body, html {
     content: '';
     position: absolute;
     top: 0;
-    left: 50%;
+    left: 20px;
     width: 2px;
     height: 100%;
     background: var(--primary-color);
@@ -207,18 +251,12 @@ body, html {
 .timeline-item {
     margin-bottom: 50px;
     position: relative;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.timeline-item:nth-child(even) {
-    justify-content: flex-start;
+    padding-left: 50px;
 }
 
 .timeline-icon {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 1px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -235,16 +273,11 @@ body, html {
 }
 
 .timeline-content {
-    width: 45%;
     padding: 20px;
     background: rgba(255,255,255,0.05);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     position: relative;
-}
-
-.timeline-item:nth-child(even) .timeline-content {
-    text-align: left;
 }
 
 .timeline-date {
@@ -257,72 +290,32 @@ body, html {
     margin-bottom: 10px;
 }
 
-.timeline-content::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    width: 20px;
-    height: 20px;
-    background: var(--accent-color);
-    transform: rotate(45deg);
-}
-
-.timeline-item:nth-child(odd) .timeline-content::before {
-    right: -10px;
-}
-
-.timeline-item:nth-child(even) .timeline-content::before {
-    left: -10px;
-}
-
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 30px;
-    }
-    .timeline-item {
-        justify-content: flex-start;
-        padding-left: 80px;
-    }
-    .timeline-icon {
-        left: 10px;
-    }
-    .timeline-content {
-        width: 100%;
-    }
-    .timeline-content::before {
-        left: -10px !important;
-    }
-}
-
-/* ... (rest of the CSS remains the same) ... */
-
+/* Circular image styling */
 .circular-image-container {
     text-align: center;
-    margin-top: 70px; /* Adjust as needed */
+    margin-top: 3rem;
 }
 
-/* Circular image styling */
 .circular-image {
-    width: 250px; /* Adjust width */
-    height: 250px; /* Adjust height to be the same as width */
-    border-radius: 50%; /* This creates the circular effect */
-    object-fit: cover; /* Ensures the image covers the circle without distortion */
-    display: block; /* Ensures it centers within the container if margin auto is used */
-    margin: 0 auto; /* Centers the image horizontally */
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
-/* ... (previous CSS remains the same) ... */
 
 /* Certifications grid styles */
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: 1fr;
+    gap: 1rem;
 }
 
 .certification-item {
     background-color: rgba(192, 224, 255, 0.05);
     border-radius: 15px;
-    padding: 20px;
+    padding: 1rem;
     transition: all 0.3s ease;
 }
 
@@ -348,25 +341,19 @@ body, html {
     text-align: justify;
 }
 
-/* ... (rest of the CSS remains the same) ... */
-
+/* Description styles */
 .description {
-    font-size: 1.2em;
-    max-width: 1000px;
-    margin: 0 auto 40px;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
     color: var(--text-color);
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
-
+/* Skills category styles */
 .skill-category {
-    background-color: var(--card-bg-color);
+    background-color: rgba(255,255,255,0.05);
     border-radius: 15px;
-    padding: 30px;
+    padding: 1.5rem;
     transition: all 0.3s ease;
 }
 
@@ -378,11 +365,11 @@ body, html {
     list-style-type: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
-    max-height: 300px; /* Allows for 2 rows of skills before scrolling */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.75rem;
+    max-height: 300px;
     overflow-y: auto;
-    padding-right: 10px; /* Gives space for the scrollbar */
+    padding-right: 10px;
 }
 
 .skill-list::-webkit-scrollbar {
@@ -409,19 +396,15 @@ body, html {
     transition: all 0.3s ease;
     cursor: pointer;
     text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
+    padding: 0.5rem;
+    font-size: 0.8em;
 }
 
-.skill-item:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.05);
-}
-
+/* Modal styles */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -435,7 +418,7 @@ body, html {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid var(--primary-color);
-    width: 80%;
+    width: 90%;
     max-width: 600px;
     border-radius: 15px;
 }
@@ -454,23 +437,26 @@ body, html {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Social links styles */
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    margin-bottom: 50px;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .social-links a {
     color: #ffffff;
-    font-size: 24px;
+    font-size: 1.5rem;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #4a90e2; /* Change this to your preferred hover color */
+    color: var(--accent-color);
 }
 
+/* Carousel styles */
 .carousel {
     position: relative;
     width: 100%;
@@ -478,17 +464,21 @@ body, html {
     margin: 0 auto;
     overflow: hidden;
 }
+
 .carousel-inner {
     display: flex;
     transition: transform 0.3s ease-in-out;
 }
+
 .carousel-item {
     flex: 0 0 100%;
 }
+
 .carousel-item img {
     width: 100%;
     height: auto;
 }
+
 .carousel-control {
     position: absolute;
     top: 50%;
@@ -498,5 +488,116 @@ body, html {
     padding: 10px;
     text-decoration: none;
 }
+
 .carousel-control.prev { left: 10px; }
 .carousel-control.next { right: 10px; }
+
+/* Responsive styles */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .nav li {
+        margin: 0 1rem;
+    }
+
+    .header h1 {
+        font-size: 3.5rem;
+    }
+
+    .header p {
+        font-size: 1.25rem;
+    }
+
+    .skills-grid,
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline::before {
+        left: 50%;
+    }
+
+    .timeline-item {
+        padding-left: 0;
+        width: 50%;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 50%;
+    }
+
+    .timeline-icon {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-content::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        background: var(--accent-color);
+        transform: rotate(45deg);
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::before {
+        right: -10px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-content::before {
+        left: -10px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .skills-grid,
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .header h1 {
+        font-size: 4rem;
+    }
+
+    .skill-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure all images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Make tables responsive */
+table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+}
+
+/* Ensure iframes (like for embedded videos) are responsive */
+iframe {
+    max-width: 100%;
+}
